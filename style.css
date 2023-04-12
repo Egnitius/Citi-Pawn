@@ -34,7 +34,7 @@ body{
     color: #0a5878;
   }
   .content{
-    visibility:hidden;  
+    /* visibility:hidden;   */
     width: 330px;
     height: auto;
     background: #dde1e7;
