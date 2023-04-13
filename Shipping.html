@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- Cart css -->
+        <link rel="stylesheet" href="css/cart.css">
+
+        <style>
+            body {
+              font-family: Arial;
+              font-size: 17px;
+              padding: 8px;
+              overflow-x: hidden;
+              background-image: url(./img/hero.jpg);
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            .row {
+              display: -ms-flexbox; 
+              display: flex;
+              -ms-flex-wrap: wrap; 
+              flex-wrap: wrap;
+              margin: 0 -16px;
+            }
+            
+            .col-25 {
+              -ms-flex: 25%; 
+              flex: 25%;
+            }
+            
+            .col-50 {
+              -ms-flex: 50%; 
+              flex: 50%;
+            }
+            
+            .col-75 {
+              -ms-flex: 75%; 
+              flex: 75%;
+            }
+            
+            .col-25,
+            .col-50,
+            .col-75 {
+              padding: 0 16px;
+            }
+            
+            .container {
+              background-color: #f2f2f2;
+              padding: 5px 20px 15px 20px;
+              /* border-radius: 10%; */
+              border: 2px solid goldenrod;
+              border-radius: 3px;
+              box-shadow: -3px -3px 7px #fffdfdcc,
+                      3px 3px 5px rgba(69, 108, 175, 0.342);
+              animation: 2s forBorder 4s infinite;
+              /* animation-duration: 4s ; */
+            
+            }
+            @keyframes forBorder{
+            
+              from {
+                border: 2px solid goldenrod;
+              }
+              to {
+                  border-image-slice: 1;
+                  border-image-source: linear-gradient(to right,goldenrod, #743ad5, #d53a9d);
+                }
+            
+            }
+            /* input{
+              border-right: 0;
+              border-left: 0;
+              
+            } */
+            
+            input[type=text], select {
+              width: 100%;
+              margin-bottom: 20px;
+              padding: 12px;
+              border-top: none;
+              border-left: none;
+              border-right: none;
+              border-bottom: 2px solid #ccc;
+              border-radius: 3px;
+            }
+            input [type="submit"]
+            input:is(:hover, :focus)
+            ,label:is(:hover, :focus){
+              cursor: pointer;
+            }
+            input:is(:hover, :focus)
+            ,select:is(:hover, :focus){
+              border-bottom: 2px solid gold;
+            
+            }
+            
+            label {
+              margin-bottom: 10px;
+              display: block;
+              font-weight: bold;
+            }
+            ::placeholder, select{
+              color: goldenrod;
+            }
+            
+            .icon-container {
+              margin-bottom: 20px;
+              padding: 7px 0;
+              font-size: 24px;
+            }
+            
+            .btn {
+              background-color: goldenrod;
+              color: black;
+              padding: 12px;
+              margin: 10px 0;
+              border: none;
+              width:auto;
+              border-radius: 3px;
+              cursor: pointer;
+              font-size: 17px;
+              transition: all ease-in-out 1s;
+              margin-left: 43%;
+            }
+            
+            .btn:is(:hover, :focus) {
+                color: black;
+                box-shadow: -3px -3px 7px #fffdfdcc,
+                      3px 3px 5px rgba(18, 86, 204, 0.342);
+                background-color: #f2f2f2;
+                width: 50%;
+                margin-left: 25%;
+            }
+            
+            a {
+              color: #2196F3;
+            }
+            
+            hr {
+              border: 1px solid lightgrey;
+            }
+            
+            span.price {
+              float: right;
+              color: grey;
+            }
+            
+            @media (max-width: 800px) {
+              .row {
+                flex-direction: column-reverse;
+              }
+              .col-25 {
+                margin-bottom: 20px;
+              }
+            }
+            
+            .btn-close {
+              background-color: transparent;
+              border: 0;
+              color: black;
+              font-size: 20px;
+              cursor: pointer;
+              position: absolute;
+              right: 1px;
+              top: 1px;
+              border-radius: 50%;
+              transition: all 0.2s ease-in;
+            
+            }
+            .btn-close:hover {
+              opacity: 0.7;
+              background-color: gold;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- Topbar Start -->
+<div class="container-fluid px-0 d-none d-lg-block">
+    <div class="row gx-0">
+        <div class="col-lg-4 text-center bg-secondary py-3">
+            
+        </div>
+        <div class="col-lg-4 text-center bg-primary border-inner py-3">
+            <div class="d-inline-flex align-items-center justify-content-center">
+                <a href="index.html" class="navbar-brand">
+                    <h1 class="m-0 text-uppercase text-white">CITI-PAWN</h1>
+                    <p style="font-size: medium; color: white;">Make every gadget count.  You name it, We'll get it.</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center bg-secondary py-3">
+            
+        </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+        <h2 style="text-align: center; margin-top: 2%; color: white;">Shipping Form</h2>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="" id="form1">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Shipping Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <select>                
+            <option selected disabled>Choose A City</option>
+            <option value="Bhisho">Bhisho</option>
+            <option value="Bloemfontein">Bloemfontein</option>
+            <option value="Johannesburg">Johannesburg</option>
+            <option value=" Pietermaritzburg"> Pietermaritzburg</option>
+            <option value="Polokwane">Polokwane</option>
+            <option value="Mbombela">Mbombela</option>
+            <option value="Northern_Cape">Northern Cape</option>
+            <option value="North_West">North West:</option>
+          </select>
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">Province</label>
+                <select>                
+                <option selected disabled>Choose A Province</option>
+                <option value="Eastern_Cape">Eastern Cape</option>
+                <option value="Free_State">Free State</option>
+                <option value="Gauteng">Gauteng</option>
+                <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                <option value="Limpopo">Limpopo</option>
+                <option value="Mpumalanga">Mpumalanga</option>
+                <option value="Northern_Cape">Northern Cape</option>
+                <option value="North_West">North West</option>
+              </select>
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="0012">
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="submit" value="Submit" class="btn">
+        </form>
+
+        </div>
+        </div>
+        </div>
+    </body>
+</html>
+

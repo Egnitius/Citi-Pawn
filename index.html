@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CITI PAWN</title>
+    <title>CITI-PAWN</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -28,6 +28,24 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Cart css -->
+    <link rel="stylesheet" href="css/cart.css">
+    <style>
+.blink {
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    color: gold;
+  }
+}
+    </style>
 </head>
 
 <body>
@@ -40,7 +58,8 @@
             <div class="col-lg-4 text-center bg-primary border-inner py-3">
                 <div class="d-inline-flex align-items-center justify-content-center">
                     <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-uppercase text-white">CITI PAWN</h1>
+                        <h1 class="m-0 text-uppercase text-white">CITI-PAWN</h1>
+                        <p style="font-size: medium; color: white;">Make every gadget count.  You name it, We'll get it.</p>
                     </a>
                 </div>
             </div>
@@ -55,7 +74,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
         <a href="index.html" class="navbar-brand d-block d-lg-none">
-            <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CITI PAWN</h1>
+            <h1 class="m-0 text-uppercase text-white">CITI-PAWN</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -64,12 +83,14 @@
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="#top" class="nav-item nav-link">About Us</a>
-                <!-- <a href="menu.html" class="nav-item nav-link">Tech & Pricing</a> -->
                 <a href="login.html" class="nav-item nav-link">Log In</a>
                 <a href="#contact" class="nav-item nav-link">Contact Us</a>
-                <a href="contact.html" class="nav-item nav-link"><i class="fa-solid fa-cart-shopping fa-fade" style="color: #ffffff;"></i></a>
-                
-                 </div>
+                <a href="contact.html" class="nav-item nav-link"></a>
+                <div class="cart-btn">
+                    <i id="cart" class="fas fa-shopping-cart"></i>
+                      <span class ="cart-quantity">0</span>
+                  </div>
+            </div>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -81,8 +102,8 @@
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="font-secondary text-primary mb-4">Super Cheap</h1>
-                    <h1 class="display-1 text-uppercase text-white mb-4">CITI PAWN</h1>
-                    <h1 class="text-uppercase text-white">The Best Gadgets In South Afrrica</h1>
+                    <h1 class="display-1 text-uppercase text-white mb-4">CITI-PAWN</h1>
+                    <h1 class="text-uppercase text-white">The Best Gadgets In Gauteng</h1>
                     
                 </div>
             </div>
@@ -91,6 +112,24 @@
     <!-- Hero End -->
 
 
+ <!-- Start cart model -->
+ <div class="cart-modal-overlay">
+    <div class="cart-modal">
+      <i id="close-btn" class="fas fa-times"></i>
+        <h1 class="cart-is-empty">Cart is empty</h1>
+      
+        <div class="product-rows">
+        </div>
+        <div class="total">
+          <h1 class="cart-total">TOTAL</h1>
+            <span class="total-price">R0</span>
+              <a href="checkout.html"><button class="purchase-btn">PURCHASE</button></a>
+              <!-- <a href="Invoice.html"><button class="invoice-btn">Generate Invoice</button></a> -->
+        </div>
+      </div>
+</div>
+      
+<!--   end of cart modal -->
 
 
 
@@ -99,12 +138,14 @@
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
                 <h2 class="text-primary font-secondary" id="top">About Us</h2>
-                <h1 class="display-4 text-uppercase">Welcome To CITI PAWN</h1>
+                <h1 class="display-4 text-uppercase">Welcome To CITI-PAWN</h1>
             </div>
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 360px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/about.png" style="object-fit: cover;">
+                        <div class="blink">
+                            <img class="position-absolute w-100 h-100" src="img/logo5.png" style="object-fit: cover;">
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 pb-5">
@@ -133,15 +174,15 @@
     <!-- About End -->
 
 
-    
-
     <!-- Products Start -->
+
     <div class="container-fluid about py-5">
         <div class="container">
             <div class="section-title position-relative text-center mx-auto mb-5 pb-3" style="max-width: 600px;">
                 <h2 class="text-primary font-secondary">Tech & Pricing</h2>
                 <h1 class="display-4 text-uppercase">Explore Our Gadgets</h1>
             </div>
+             
             <div class="tab-class text-center">
                 <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
                     <li class="nav-item">
@@ -151,7 +192,7 @@
                         <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Phones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">others</a>
+                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">TV's</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -160,226 +201,427 @@
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-1.jpg" alt="" style="width: 130px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R17999.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-1 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./img/cake-1.jpg" alt="" style="width: 130px; height: 85px;">
+                                              <h5 class="text-uppercase">Asus Zenbook</h5>
+                                              <ul>
+                                                <li>Windows 11 Home</li>
+                                            <li>32GB RAM / 2TB SSD</li>
+                                            <li>Intel Core i7-11980HK 2.6GHz </li>
+                                            <li>Nvidia GeForce RTX 3080 Laptop</li><br/>
+                                              </ul> 
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R17995</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Aspire 5 Core i7_Acer3</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/Omen.PNG" alt="" style="width: 130px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R12299.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Omen Core i7_HP2</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
+                                        <div class="items-container">
+                                            <div class="card-2 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./img/Omen.PNG" alt="" style="width: 130px; height: 85px;">
+                                              <h5 class="text-uppercase">Omen Core i7_HP</h5>
+                                              <ul>
+                                                <li>Windows 11 Home</li>
+                                            <li>16GB RAM / 512 SSD</li>
+                                            <li>Intel Core i7-12700H Processor </li>
+                                            <li>Nvidia GeForce RTX 3060 6GB GDDR6</li>
+                                            <li>Audio by B&O with Dual<br> Speakers</li><br/>
+                                              </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R30000</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/Swift2.PNG" alt="" style="width: 130px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R30000.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-3 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/Swift Core i5_Acer2.PNG" alt="" style="width: 130px; height: 85px;">
+                                              <h5 class="text-uppercase">Swift Core i5 Acer</h5>
+                                              <ul>
+                                                <li>Windows 10 pro</li>
+                                                <li>8GB RAM and 523GB SSD</li>
+                                                <li>Intel Core i5-1135G7 Processor</li>
+                                                <li>Intel Iris Xe Graphics</li>
+                                                <li>HD Camera with Mic</li>
+                                                <br/>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R11555</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Swift Core i5_Acer2</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/cake-1.jpg" alt="" style="width: 130px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R23000.00</h4>
+                                    <div class="items-container">
+                                        <div class="card-4 card">
+                                            <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                          <img class="product-image" src="./images/X515 Core i7_Asus3.PNG" alt="" style="width: 130px; height: 85px;">
+                                          <h5 class="text-uppercase">X515 Core i7 Asus</h5>
+                                          <ul>
+                                            <li>Windows 11 Home</li>
+                                            <li>8GB RAM and 512GB SSD</li>
+                                            <li>Intel Core i7-1165G7 Processor</li>
+                                            <li>Intel Iris Xe Graphics</li>
+                                            <li>Front facing VGA Camera</li>
+                                        </ul>
+                                            <span class="product-price" id="bg-dark text-primary p-2 m-0">R10999</span><br/>
+                                            <button class="add-to-cart">Add to cart</button>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">ZenBook Corei7_Asus2</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div></div>
                                 </div>
-                            </div>
+                            
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/Omen.PNG" alt="" style="width: 130px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R13999.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Swift Core i5_Acer2</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
+                                        <div class="items-container">
+                                            <div class="card-5 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/XPS Core i7_Dell2.PNG" alt="" style="width: 130px; height: 85px;">
+                                              <h5 class="text-uppercase">Dell XPS 17 9720 Core i7</h5>
+                                              <ul>
+                                                <li>Windows 11 pro</li>
+                                                <li>16GB RAM / 1TB SSD</li>
+                                                <li>Intel Core i7-12700H Processor </li>
+                                                <li>Nvidia GeForce RTX 3050 4GB<br>GDDR6</li>
+                                                <li>WiFi 6 1675 2x2 Bluetooth 5.2</li>
+                                            </ul>
+                                                
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R15000</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div></div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/Swift2.PNG" alt="" style="width: 130px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R22000.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-6 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/Zenook Intel Core i5_Asus.PNG" alt="" style="width: 130px; height: 85px;">
+                                              <h5 class="text-uppercase">Zenbook Intel Core i5 Asus</h5>
+                                              <ul>
+                                                <li>Windows 11 Home</li>
+                                                <li>8GB RAM / 512GB SSD</li>
+                                                <li>Intel Iris Xe Graphics</li>
+                                                <li>Intel Core i5-1135G7</li>
+                                                <li>WiFi and Bluetooth</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R9999</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">ZenBook Corei7_Asus2</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
+
+                        <!-- Second Tab Cellphones -->
                     <div id="tab-2" class="tab-pane fade show p-0">
                         <div class="row g-3">
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/u60.PNG" alt="" style="width: 80px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R5629.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-1 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/u60 Dual_Sim Hisense.PNG" alt="" style="width: 110px; height: 150px;">
+                                              <h5 class="text-uppercase">u60 Dual_Sim Hisense</h5>
+                                              <ul>
+                                                <li>Display - 6.1"</li>
+                                                <li>Memory - 16GB</li>
+                                                <li>Camera -  Rear;5MP + CIF.Front;5MP</li>
+                                                <li>Battery - 3000mAh</li>
+                                                <li>Dual Sim</li>
+                                            </ul> 
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R4999</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">u60 Dual_Sim Hisense</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/A14.PNG" alt="" style="width: 100px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R1599.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">A14 Dual_Sim SamsungGalaxy</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
+                                        <div class="items-container">
+                                            <div class="card-2 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/A14 Dual_Sim SamsungGalaxy.PNG" alt="" style="width: 110px; height: 150px;">
+                                              <h5 class="text-uppercase">A14 Dual_Sim Samsung Galaxy</h5>
+                                              <ul>
+                                                <li>Display - 6.6"</li>
+                                                <li>Dimensions - 167.7 x 78 x 9.1mm</li>
+                                                <li>Camera - Rear; 50MP + 5MP + Front;13MP</li>
+                                                <li>Memory - 64GB ROM, 4GB RAM</li>
+                                                <li>Sensors - Accelerometer,
+                                                    Fingerprint Sensor, Geomagnetic
+                                                    Sensor, Light Sensor,
+                                                    Proximity Sensor</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R3500</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/u60.PNG" alt="" style="width: 80px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R2399.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-3 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/Apple iPhone 14 Pro Max.jpg" alt="" style="width: 110px; height: 150px;">
+                                              <h5 class="text-uppercase">Apple iPhone 14 Pro Max</h5>
+                                              <ul>
+                                                <li>Capacity - 256GB</li>
+                                                <li>Wi Fi 6 (802.11ax) with 2x2 MIMO</li>
+                                                <li>Sim Card - Nano-SIM</li>
+                                                <li>Express Cards with power reserve</li>
+                                                <li>NFC with reader mode</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R10000</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">u60 Dual_Sim Hisense</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/A14.PNG" alt="" style="width: 100px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R2699.00</h4>
+                                    <div class="items-container">
+                                        <div class="card-4 card">
+                                            <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                          <img class="product-image" src="./images/Samsung Galaxy A73 5G 6.jpg" alt="" style="width: 110px; height: 150px;">
+                                          <h5 class="text-uppercase">Samsung Galaxy A73 5G 6</h5>
+                                          <ul>
+                                            <li>7 FHD+ sAMOLED+ 120Hz Display</li>
+                                            <li>108MP High Resolution Camera</li>
+                                            <li>2 Days Battery</li>
+                                            <li>Blazing 5G</li>
+                                            <li>128GB of internal storage</li>
+                                        </ul>
+                                            <span class="product-price" id="bg-dark text-primary p-2 m-0">R6100</span><br/>
+                                            <button class="add-to-cart">Add to cart</button>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">A14 Dual_Sim SamsungGalaxy</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div></div>
                                 </div>
-                            </div>
+                            
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/u60.PNG" alt="" style="width: 80px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R6439.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">A14 Dual_Sim SamsungGalaxy</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
+                                        <div class="items-container">
+                                            <div class="card-5 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/Galaxy A33 5G.png" alt="" style="width: 110px; height: 150px;">
+                                              <h5 class="text-uppercase">Galaxy A33 5G</h5>
+                                              <ul>
+                                                <li>6.4 inches, 1080 x 2400 pixels</li>
+                                                <li>Battery Capacity: Non-removable Li-Po 5000 mAh</li>
+                                                <li>Main Camera: Quad:  48 MP, f/1.8, 26mm (wide); 
+                                                    12 MP, f/2.2 (Ultrawide); 8 MP, f/2.2, 123˚, 
+                                                    (ultrawide); 5 MP, f/2.4, (macro); 2 MP, f/2.4, (depth)</li>
+                                                <li>Memory: 128GB 6GB RAM</li>
+                                                <li>SIM: Dual Sim</li>
+                                            </ul>
+                                                
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R4500</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div></div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/A14.PNG" alt="" style="width: 100px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R7,999.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-6 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/HUAWEI nova Y90 Emerald Green.png" alt="" style="width: 110px; height: 150px;">
+                                              <h5 class="text-uppercase">HUAWEI nova Y90 Emerald Green</h5>
+                                              <ul>
+                                                <li>Screen Size6.7 inches</li>
+                                                <li>Storage Capacity - 128 GB</li>
+                                                <li>OS - Android</li>
+                                                <li>Color - Black, Blue, Green,
+                                                     Midnight Black, White</li>
+                                                <li>SIM Slots - Dual SIM</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R6000</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">A14 Dual_Sim SamsungGalaxy</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                        
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Third tab TV's -->
                     <div id="tab-3" class="tab-pane fade show p-0">
                         <div class="row g-3">
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/50-Inch.PNG" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R2549.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-1 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/Android Google TV.png" alt="" style="width: 300px; height: 200px;">
+                                              <h5 class="text-uppercase">TCL 55" 55P725 4K Android Google TV</h5>
+                                              <ul>
+                                                <li>Resolution - 4K</li>
+                                                <li>Features - Google TV & Duo</li>
+                                                <li>Dolby Vision & Atmos/li>
+                                                <li>HDMI 2.1</li>
+                                                <li>Wide Color Gamut (WCG)</li>
+                                            </ul> 
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R8999</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">32-inch Smart HD LED TV_Hisense</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/43-Inch.PNG" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R3439.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">50-Inch SM Neo QLED_Samsung</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo  <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
+                                        <div class="items-container">
+                                            <div class="card-2 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/Toshiba Smart LED TV.jpg" alt="" style="width: 300px; height: 200px;">
+                                              <h5 class="text-uppercase">Toshiba 58" U5069EV UHD Smart LED TV </h5>
+                                              <ul>
+                                                <li>Resolution - (3840*2160)</li>
+                                                <li>HDMI: 3, USB Ports: 2</li>
+                                                <li>Without Stand (WxHxD)mm - 1293×753×84<br>
+                                                    With Stand (WxHxD)mm - 1293×797×227</li> 
+                                                <li>Screen Mirroring</li>
+                                                <li>Dolby Audio & Bluetooth</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R11000</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/75-inch.PNG" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R4799.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-3 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/55-Inch 4K Smart UHD AI_LG3.PNG" alt="" style="width: 300px; height: 200px;">
+                                              <h5 class="text-uppercase">55-Inch 4K Smart UHD AI_LG</h5>
+                                              <ul>
+                                                <li>Real 4K UHD Reslution 3840 x 2160</li>
+                                                <li>Netflix, Youtube, Showmax and DSTV</li>
+                                                <li>HDMI x 2, USB x 2</li>
+                                                <li>4K Quad core Processsor</li>
+                                                <li>4K Upscaling with Image Enhancing</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R9500</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">32-inch Smart HD LED TV_Hisense</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/55-Inch.PNG" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R5549.00</h4>
+                                    <div class="items-container">
+                                        <div class="card-4 card">
+                                            <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                          <img class="product-image" src="./images/75-inch Smart Neo QLED_Samsung.PNG" alt="" style="width: 300px; height: 200px;">
+                                          <h5 class="text-uppercase">75-inch Smart Neo QLED_Samsung</h5>
+                                          <ul>
+                                            <li>Resolution - 3840 x 2160</li>
+                                            <li>HDMI x 4, USB x 2</li>
+                                            <li>Active Voice Amplifier (AVA)</li>
+                                            <li>Neo QLED, Smart TV</li>
+                                            <li>Freesync Premium Pro</li>
+                                        </ul>
+                                            <span class="product-price" id="bg-dark text-primary p-2 m-0">R11000</span><br/>
+                                            <button class="add-to-cart">Add to cart</button>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">43-Inch SM UHD LED TV_Samsung</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div></div>
                                 </div>
-                            </div>
+                            
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/75-inch.PNG" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R6500.00</h4>
-                                    </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">43-Inch SM UHD LED TV_Samsung</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
+                                        <div class="items-container">
+                                            <div class="card-5 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/32-inch Smart HD LED TV_Hisense.PNG" alt="" style="width: 300px; height: 200px;">
+                                              <h5 class="text-uppercase">32-inch Smart HD LED TV_Hisense</h5>
+                                              <ul>
+                                                <li>HDMI x 2, USB x 2</li>
+                                                <li>Smart TV</li>
+                                                <li>VIDAA U4.0</li>
+                                                <li>Bezelless Design</li>
+                                                <li>Dolby audio</li>
+                                            </ul>
+                                                
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R7800</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div></div>
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="img/43-Inch.PNG" alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">R7,499.00</h4>
+                                        <div class="items-container">
+                                            <div class="card-6 card">
+                                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                                              <img class="product-image" src="./images/40-Inch Smart FHD_Samsung.PNG" alt="" style="width: 300px; height: 200px;">
+                                              <h5 class="text-uppercase">40-Inch Smart FHD_Samsung</h5>
+                                              <ul>
+                                                <li>Resolution - 1920 x 1080</li>
+                                                <li>HDMI x 2</li>
+                                                <li> USB x 1</li>
+                                                <li>Smart TV</li>
+                                            </ul>
+                                                <span class="product-price" id="bg-dark text-primary p-2 m-0">R6000</span><br/>
+                                                <button class="add-to-cart">Add to cart</button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">50-Inch SM Neo QLED_Samsung</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo <br/><a href="" class="btn btn-primary border-inner py-3 px-5">View more</a></span>
-                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -389,41 +631,6 @@
         </div>
     </div>
     <!-- Products End -->
-
-
-    <!-- Service Start -->
-    <div class="container-fluid service position-relative px-5 mt-5" style="margin-bottom: 135px;">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <h4 class="text-uppercase mb-3">Laptops</h4>
-                        <p>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo amet tempor amet kasd lorem dolor ipsum</p>
-                        <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <h4 class="text-uppercase mb-3">Phones</h4>
-                        <p>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo amet tempor amet kasd lorem dolor ipsum</p>
-                        <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="bg-primary border-inner text-center text-white p-5">
-                        <h4 class="text-uppercase mb-3">Television Sets</h4>
-                        <p>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit justo amet tempor amet kasd lorem dolor ipsum</p>
-                        <a class="text-uppercase text-dark" href="">Read More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-6 text-center">
-                    <h1 class="text-uppercase text-light mb-4">30% Discount For This Summer</h1>
-                    <a href="" class="btn btn-primary border-inner py-3 px-5">Order Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service Start -->
 
     <!-- Testimonial Start -->
     <div class="container-fluid py-5">
@@ -435,46 +642,51 @@
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-1.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Dell</h4>
-                            <span>R 10 000</span>
+                        <div class="card-6 card">
+                                <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                              <img class="product-image" src="./images/40-Inch Samsung.PNG" alt="" style="width: 300px; height: 200px;">
+                              <h5 class="text-uppercase">Samsung Smart FHD</h5>
+                                  <span class="product-price" style="color: black;">R3000</span><br/>
+                                <button class="add-to-cart">Add to cart</button>
+                            </div>
                         </div>
                     </div>
-                    <p class="mb-0"> add button                  </p>
                 </div>
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
-                            <span>Profession</span>
+                        <div class="card-6 card">
+                            <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                          <img class="product-image" src="./images/HUAWEI nova Y90.png" alt="" style="width: 160px; height: 200px;">
+                          <h5 class="text-uppercase">HUAWEI nova Y90</h5>
+                            <span class="product-price" id="bg-dark text-primary p-2 m-0" style="color: black;">R3000</span><br/>
+                            <button class="add-to-cart">Add to cart</button>
                         </div>
                     </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
+                    </div>
                 </div>
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
-                            <span>Profession</span>
+                        <div class="card-1 card">
+                            <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                          <img class="product-image" src="./img/cake.jpg" alt="" style="width: 250px; height: 200px;">
+                          <h5 class="text-uppercase">Asus</h5> 
+                            <span class="product-price" id="bg-dark text-primary p-2 m-0" style="color: black;">R8999</span><br/>
+                            <button class="add-to-cart">Add to cart</button>
                         </div>
                     </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
+                    </div>
                 </div>
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;">
-                        <div class="ps-3">
-                            <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
-                            <span>Profession</span>
+                        <div class="card-5 card">
+                            <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4"><br/>
+                          <img class="product-image" src="./images/Galaxy A33.png" alt="" style="width: 160px; height: 200px;">
+                          <h5 class="text-uppercase">Galaxy A33</h5>
+                            <span class="product-price" id="bg-dark text-primary p-2 m-0" style="color: black;">R2500</span><br/>
+                            <button class="add-to-cart">Add to cart</button>
                         </div>
                     </div>
-                    <p class="mb-0">Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -489,9 +701,9 @@
                 <div class="col-lg-4 col-md-6 mb-lg-n5">
                     <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary border-inner p-4">
                         <a href="index.html" class="navbar-brand">
-                            <h1 class="m-0 text-uppercase text-white">CITI PAWN</h1>
+                            <h1 class="m-0 text-uppercase text-white">CITI-PAWN</h1>
                         </a>
-                        <p class="mt-3">Lorem diam sit erat dolor elitr et, diam lorem justo labore amet clita labore stet eos magna sit. Elitr dolor eirmod duo tempor lorem, elitr clita ipsum sea. Nonumy rebum et takimata ea takimata amet gubergren, erat rebum magna lorem stet eos. Diam amet et kasd eos duo dolore no.</p>
+                        <p class="mt-3">We justify our deals and prices with the assistance of appraisers that rank number in our province.</p>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-6">
@@ -500,7 +712,7 @@
                             <h4 class="text-primary text-uppercase mb-4">Location</h4>
                             <div class="d-flex mb-2">
                                 <i class="bi bi-geo-alt text-primary me-2"></i>
-                                <p class="mb-0">19 Amesof str, Braamfontein, JHB</p>
+                                <p class="mb-0">19 Ameshoff str, Braamfontein, JHB</p>
                             </div>
                             
                         </div>
@@ -510,7 +722,7 @@
                                 <a class="text-secondary mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
                                 <a class="text-secondary mb-2" href="#top"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
                             <a class="text-secondary mb-2" href="login.html"><i class="bi bi-arrow-right text-primary me-2"></i>Log In</a>
-                                <a class="text-secondary" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                                <a class="text-secondary" href="#bottom"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -536,7 +748,7 @@
     </div>
     <div class="container-fluid text-secondary py-4" style="background: #111111;">
         <div class="container text-center">
-            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">CITI PAWN</a>. All Rights Reserved. Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">#Codebreakers</a></p>
+            <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">CITI-PAWN</a>. All Rights Reserved. Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">#Codebreakers</a></p>
         </div>
     </div>
     <!-- Footer End -->
@@ -556,6 +768,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script  src="./js/Cart.js"></script>
 </body>
 
 

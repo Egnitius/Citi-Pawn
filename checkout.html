@@ -3,11 +3,31 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet"> 
+
+<!-- Libraries Stylesheet -->
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+<!-- Customized Bootstrap Stylesheet -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+
+<!-- Cart css -->
+<link rel="stylesheet" href="css/cart.css"> 
+
 <style>
 body {
   font-family: Arial;
   font-size: 17px;
   padding: 8px;
+  overflow-x: hidden;
+  background-image: url(./img/hero.jpg);
 }
 
 * {
@@ -46,16 +66,31 @@ body {
 .container {
   background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
+  /* border-radius: 10%; */
+  border: 2px solid goldenrod;
   border-radius: 3px;
   box-shadow: -3px -3px 7px #fffdfdcc,
           3px 3px 5px rgba(69, 108, 175, 0.342);
+  animation: 2s forBorder 4s infinite;
+  /* animation-duration: 4s ; */
+
 }
-input{
+@keyframes forBorder{
+
+  from {
+    border: 2px solid goldenrod;
+  }
+  to {
+      border-image-slice: 1;
+      border-image-source: linear-gradient(to right,goldenrod, #743ad5, #d53a9d);
+    }
+
+}
+/* input{
   border-right: 0;
   border-left: 0;
   
-}
+} */
 
 input[type=text], select {
   width: 100%;
@@ -84,7 +119,7 @@ label {
   font-weight: bold;
 }
 ::placeholder, select{
-  color: gold;
+  color: goldenrod;
 }
 
 .icon-container {
@@ -94,7 +129,7 @@ label {
 }
 
 .btn {
-  background-color: gold;
+  background-color: goldenrod;
   color: black;
   padding: 12px;
   margin: 10px 0;
@@ -104,7 +139,7 @@ label {
   cursor: pointer;
   font-size: 17px;
   transition: all ease-in-out 1s;
-  margin-left: 10px;
+  margin-left: 43%;
 }
 
 .btn:is(:hover, :focus) {
@@ -113,7 +148,7 @@ label {
           3px 3px 5px rgba(18, 86, 204, 0.342);
     background-color: #f2f2f2;
     width: 50%;
-    margin-left: 10%;
+    margin-left: 25%;
 }
 
 a {
@@ -137,15 +172,53 @@ span.price {
     margin-bottom: 20px;
   }
 }
+
+.btn-close {
+  background-color: transparent;
+  border: 0;
+  color: black;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  border-radius: 50%;
+  transition: all 0.2s ease-in;
+
+}
+.btn-close:hover {
+  opacity: 0.7;
+  background-color: gold;
+}
 </style>
 </head>
 <body>
+<!-- Topbar Start -->
+<div class="container-fluid px-0 d-none d-lg-block">
+  <div class="row gx-0">
+      <div class="col-lg-4 text-center bg-secondary py-3">
+          
+      </div>
+      <div class="col-lg-4 text-center bg-primary border-inner py-3">
+          <div class="d-inline-flex align-items-center justify-content-center">
+              <a href="index.html" class="navbar-brand">
+                  <h1 class="m-0 text-uppercase text-white">CITI-PAWN</h1>
+                  <p style="font-size: medium; color: white;">Make every gadget count.  You name it, We'll get it.</p>
+              </a>
+          </div>
+      </div>
+      <div class="col-lg-4 text-center bg-secondary py-3">
+          
+      </div>
+  </div>
+</div>
+<!-- Topbar End -->
 
-<h2>Responsive Checkout Form</h2>
+<h2 style="text-align: center; margin-top: 2%; color: white;">Checkout Form</h2>
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="">
+      <form action="" id="form1" onsubmit="sendFormByEmail(); return false;">
       
         <div class="row">
           <div class="col-50">
@@ -157,7 +230,7 @@ span.price {
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <select>                
+            <select id="city">                
             <option selected disabled>Choose A City</option>
             <option value="Bhisho">Bhisho</option>
             <option value="Bloemfontein">Bloemfontein</option>
@@ -172,7 +245,7 @@ span.price {
             <div class="row">
               <div class="col-50">
                 <label for="state">Province</label>
-                <select>                
+                <select id="province">                
                 <option selected disabled>Choose A Province</option>
                 <option value="Eastern_Cape">Eastern Cape</option>
                 <option value="Free_State">Free State</option>
@@ -241,25 +314,28 @@ span.price {
           </div>
           
         </div>
-        <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
-        </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Continue to checkout" class="btn" id="btn">
       </form>
     </div>
   </div>
-  <div class="col-25">
-    <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><a href="#">Product 1</a> <span class="price">R15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">R5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">R8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">R2</span></p>
-      <hr>
-      <p>Total <span class="price" style="color:black"><b>R30</b></span></p>
-    </div>
-  </div>
+  
 </div>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script src="https://api.emailjs.com/api/v1.0/email/send-form"></script>
+    <script src="https://api.emailjs.com/api/v1.1/history"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script  src="js/Cart.js"></script>
 </body>
 </html>
